@@ -2,14 +2,14 @@
 const {LRParser} = require("@lezer/lr")
 exports.parser = LRParser.deserialize({
   version: 13,
-  states: "#`QYQPOOOOQO'#C^'#C^O_QPO'#CgOOQO'#Ca'#CaQYQPOOOgQPO,59ROrQPO,59ROOQO-E6_-E6_OOQO'#C`'#C`OOQO'#Cb'#CbO}QPO'#C_OOQO'#Cj'#CjO!]QPO1G.mO!eQPO1G.mOOQO-E6`-E6`O!mQPO,59UOOQO7+$X7+$XOOQO1G.p1G.p",
-  stateData: "!{~OXOSYOS~O[PO~O]TOaUO~O[WO_RP`RP~O[WO_RPbRP~O[WO_RX`RXbRX~O__O``O~O__Ob`O~O[WO_RP`RPbRP~O",
-  goto: "!Z_PP`dkqwPPPP!PPP!TTQOSSZTURa_XXTUY_QSORVSUYTU_R^YTROSQ[TR]U",
-  nodeNames: "⚠ rules HeadSymbol Production ProductionSymbol",
+  states: "#YQYQPOOOOQO'#C^'#C^ObQPO'#ChOOQO'#Cb'#CbQYQPOOOjQPO,59SOxQPO,59SOOQO-E6`-E6`OOQO'#Cc'#CcO!WQPO'#CaOOQO'#Cj'#CjO!iQPO1G.nO!qQPO1G.nOOQO-E6a-E6aO!yQPO,59UOOQO7+$Y7+$YOOQO1G.p1G.p",
+  stateData: "#[~OYOSZOS~ORPOSPO~O]TOaUO~ORWOSWO_TP`TP~ORWOSWO_TPbTP~ORWOSWO_TX`TXbTX~O_^O`_O~O_^Ob_O~ORWOSWO_TP`TPbTP~O",
+  goto: "!T_PP`PPdkqPPPPyP}TQOSSYTUR`^QSORVSUXTU^R]XTROSQZTR[U",
+  nodeNames: "⚠ rules Head Symbol QuotedSymbol Production",
   maxTerm: 18,
   skippedNodes: [0],
   repeatNodeCount: 2,
-  tokenData: "$f~RdX^!apq!ast#Utu#a}!O#u!O!P$Q![!]$V!]!^$[!c!}#a#R#S#a#T#o#a#p#q$a#y#z!a$f$g!a#BY#BZ!a$IS$I_!a$I|$JO!a$JT$JU!a$KV$KW!a&FU&FV!a~!fYX~X^!apq!a#y#z!a$f$g!a#BY#BZ!a$IS$I_!a$I|$JO!a$JT$JU!a$KV$KW!a&FU&FV!a~#ZQY~OY#UZ~#U~#fT[~tu#a!Q![#a!c!}#a#R#S#a#T#o#a~#xP!`!a#{~$QO]~~$VO`~~$[Oa~~$aOb~~$fO_~",
+  tokenData: "%y~RfX^!gpq!grs#[st#|tu$Xwx$m}!O%Y!O!P%e![!]%j!]!^%o!c!}$X#R#S$X#T#o$X#p#q%t#y#z!g$f$g!g#BY#BZ!g$IS$I_!g$I|$JO!g$JT$JU!g$KV$KW!g&FU&FV!g~!lYY~X^!gpq!g#y#z!g$f$g!g#BY#BZ!g$IS$I_!g$I|$JO!g$JT$JU!g$KV$KW!g&FU&FV!g~#_UOY#[Zr#[rs#qs#O#[#O#P#v#P~#[~#vOS~~#yPO~#[~$RQZ~OY#|Z~#|~$^TR~tu$X!Q![$X!c!}$X#R#S$X#T#o$X~$pUOY$mZw$mwx#qx#O$m#O#P%S#P~$m~%VPO~$m~%]P!`!a%`~%eO]~~%jO`~~%oOa~~%tOb~~%yO_~",
   tokenizers: [0],
   topRules: {"rules":[0,1]},
   tokenPrec: 0
