@@ -998,9 +998,6 @@ var Relation = {
         
         if (sentences.length >= MAX_SENTENCES)
           break;
-
-        if (queue.length >= MAX_DEPTH)
-          break;
         
       }
       
@@ -1011,7 +1008,7 @@ var Relation = {
         return (a.nonterminals + a.steps) - (b.nonterminals + b.steps);
       });
       
-    } while (queue.length > 0 && sentences.length < MAX_SENTENCES);
+    } while (queue.length > 0 && sentences.length < MAX_SENTENCES && queue.length < MAX_DEPTH);
     
     return sentences.sort(function(a, b) {
       if (a.length === b.length)
