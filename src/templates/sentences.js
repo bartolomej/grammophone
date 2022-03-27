@@ -1,12 +1,13 @@
 const m = require("mithril/hyperscript");
 const Helpers = require("../helpers");
 
+let maxSentences;
+let maxDepth;
+
 module.exports = function(input) {
   let sentences = input.sentences;
   let info = input.info;
   let limit = input.limit;
-  let maxSentences = 100;
-  let maxDepth = 100;
 
   let result = [];
 
@@ -29,11 +30,11 @@ module.exports = function(input) {
   let labelTextStyle = { marginRight: '5px' }
 
   result.push(m('label', {style: labelStyle}, [
-    m("span", {style: labelTextStyle}, "Max depth"),
+    m("span", {style: labelTextStyle, value: maxDepth}, "Max depth"),
     m("input", {type: 'number', placeholder: 'Max depth', onchange: onMaxDepthChange})
   ]));
   result.push(m('label', {style: labelStyle}, [
-    m("span", {style: labelTextStyle}, "Max sentences"),
+    m("span", {style: labelTextStyle, value: maxSentences}, "Max sentences"),
     m("input", {type: 'number', placeholder: 'Max sentences', onchange: onMaxSentencesChange})
   ]));
   result.push(m("button", {onclick: onCalculate}, 'Calculate'));
