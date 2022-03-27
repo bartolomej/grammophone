@@ -52,8 +52,9 @@ function expandSentenceNode(node, grammar) {
 
 }
 
-var MAX_SENTENCES = 30;
-var MAX_DEPTH = 200;
+// dirty hack: assign window scope, so that variables can be modified in developer console
+window.MAX_SENTENCES = 100;
+window.MAX_DEPTH = 200;
 
 module.exports = function(grammar) {
 
