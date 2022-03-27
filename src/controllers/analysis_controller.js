@@ -211,10 +211,9 @@ module.exports = class AnalysisController {
 
   }
 
-  getCalculation(name) {
+  getCalculation(name, params = {}) {
 
-    return this._grammar.calculate(name);
-
+    return this._grammar.calculate(name, params);
   }
 
   getPathComponents() {

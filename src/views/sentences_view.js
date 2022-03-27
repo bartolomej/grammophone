@@ -10,10 +10,12 @@ module.exports = class SentencesView {
     this._delegate = delegate;
   }
 
-  reload() {
+  reload(params = {}) {
+    window.console.log("reloading with params: ", params)
     let vnode = template({
-      sentences: this._delegate.getCalculation("grammar.sentences"),
-      info: this._delegate.getCalculation("grammar.symbolInfo")
+      sentences: this._delegate.getCalculation("grammar.sentences", params),
+      info: this._delegate.getCalculation("grammar.symbolInfo"),
+      onCalculate: (params) => this.reload(params)
     });
 
     render(this._element, vnode);

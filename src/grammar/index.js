@@ -41,18 +41,18 @@ module.exports = class Grammar {
     this.calculations = {};
   }
 
-  calculate(name) {
+  calculate(name, params = {}) {
 
-    if (typeof Calculations[name] === "undefined") {
-      throw new Error("Undefined grammar calculation " + name);
-    }
+    // if (typeof Calculations[name] === "undefined") {
+    //   throw new Error("Undefined grammar calculation " + name);
+    // }
+    //
+    // if (typeof this.calculations[name] === "undefined") {
+    //   this.calculations[name] = Calculations[name](this, params);
+    // }
 
-    if (typeof this.calculations[name] === "undefined") {
-      this.calculations[name] = Calculations[name](this);
-    }
-
-    return this.calculations[name];
-
+    // TODO: temp fix, add smarter caching back
+    return Calculations[name](this, params);
   }
 
   transform(transformation) {

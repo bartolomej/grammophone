@@ -52,11 +52,19 @@ function expandSentenceNode(node, grammar) {
 
 }
 
-// dirty hack: assign window scope, so that variables can be modified in developer console
-window.MAX_SENTENCES = 100;
-window.MAX_DEPTH = 200;
+module.exports = function(grammar, input = {}) {
+  let params = {
+    maxSentences: 100,
+    maxDepth: 200,
+  };
 
-module.exports = function(grammar) {
+  if (input.maxSentences) {
+    params.maxSentences = input.maxSentences;
+  }
+  if (input.maxDepth) {
+    params.maxDepth = input.maxDepth;
+  }
+
 
   var start = grammar.calculate("grammar.start");
 
@@ -79,7 +87,7 @@ module.exports = function(grammar) {
         queue.push(expanded[i]);
       }
 
-      if (sentences.length >= MAX_SENTENCES) {
+      if (sentences.length >= params.maxSentences) {
         break;
       }
 
@@ -92,7 +100,7 @@ module.exports = function(grammar) {
       return (a.nonterminals + a.steps) - (b.nonterminals + b.steps);
     });
 
-  } while (queue.length > 0 && sentences.length < MAX_SENTENCES && queue.length < MAX_DEPTH);
+  } while (queue.length > 0 && sentences.length < params.maxSentences && queue.length < params.maxDepth);
 
   return sentences.sort(function(a, b) {
     if (a.length === b.length) {

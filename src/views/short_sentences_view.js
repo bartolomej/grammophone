@@ -10,10 +10,11 @@ module.exports = class ShortSentencesView {
     this._delegate = delegate;
   }
 
-  reload() {
+  reload(params = {}) {
     let vnode = template({
-      sentences: this._delegate.getCalculation("grammar.sentences"),
+      sentences: this._delegate.getCalculation("grammar.sentences", params),
       info: this._delegate.getCalculation("grammar.symbolInfo"),
+      onCalculate: (params) => this.reload(params),
       limit: 10
     });
 
